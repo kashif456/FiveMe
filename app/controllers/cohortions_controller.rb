@@ -1,4 +1,6 @@
 class CohortionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update, ]
+
   def index
     @cohortion = Cohortion.all
   end
@@ -25,8 +27,6 @@ class CohortionsController < ApplicationController
   def edit
     @cohortion = Cohortion.find(params[:id])
   end
-
-
  
   def update
      @cohortion = Cohortion.find(params[:id])
