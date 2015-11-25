@@ -1,0 +1,31 @@
+
+<table id="id" border="1">
+	<tr>
+		<td>About</td>
+		<td><%= @cohortion.full_name%></td>
+	</tr>
+	<tr>
+		<td>Profile</th>
+		<td><%= @cohortion.about%></td>
+	</tr>
+</table>
+
+<br>
+
+<%= link_to "Cohort List", cohortions_path %>
+
+	<% if @cohortadjects.any? %>
+		<h1>Adjectives Associated to <%= @cohortion.full_name%></h1>
+
+		<table id="id" border="1">
+			<div class="col-md-8">
+				<% @cohortadjects.each do |ca| %>
+					<tr>
+						<td>
+							<%= ca.adjective %>
+						</td>
+					</tr>
+				<% end %>
+	  		</div>
+  		</table>
+	<% end %>

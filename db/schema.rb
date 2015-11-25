@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151125190508) do
 
   create_table "users", force: :cascade do |t|
@@ -30,5 +31,42 @@ ActiveRecord::Schema.define(version: 20151125190508) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+ActiveRecord::Schema.define(version: 20151125190001) do
+
+  create_table "adjectives", force: :cascade do |t|
+    t.string   "adjective"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cohort_adjectives", force: :cascade do |t|
+    t.string   "adjective"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "cohortion_id"
+  end
+
+  create_table "cohortions", force: :cascade do |t|
+    t.string   "first"
+    t.string   "last"
+    t.text     "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gits", force: :cascade do |t|
+    t.string   "pull"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mto_ms", force: :cascade do |t|
+    t.string   "cohortion_id"
+    t.string   "adjective_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+>>>>>>> cohort
 
 end
