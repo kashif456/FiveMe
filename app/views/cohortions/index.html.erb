@@ -1,2 +1,28 @@
+<<<<<<< HEAD
 <h1>Cohortions#index</h1>
 <p>Find me in app/views/cohortions/index.html.erb</p>
+=======
+<h1>SI Cohortions</h1>
+<br>
+<table id="id">
+	<th>Name</th>
+	<th>Last</th>
+	<th colspan="3">Action</th>
+	<% @cohortion.each do |c| %>
+		<tr>
+			<td>
+				<%= c.first %>
+			</td>
+			<td>
+				<%= c.last %>
+			</td>
+			<td><%= link_to "Details", cohortion_path(c)%></td>
+				<td><%= link_to "Edit", edit_cohortion_path(c)%></td>
+		</tr>
+	<% end %>
+
+</table>
+<br><br>
+
+<%= link_to "New", new_cohortion_path %>
+>>>>>>> 789fe3a756d44b9ddcf451ebd7fe555de6983e27

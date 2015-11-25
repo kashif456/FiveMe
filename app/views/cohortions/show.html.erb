@@ -1,2 +1,36 @@
+<<<<<<< HEAD
 <h1>Cohortions#show</h1>
 <p>Find me in app/views/cohortions/show.html.erb</p>
+=======
+
+<table id="id" border="1">
+	<tr>
+		<td>About</td>
+		<td><%= @cohortion.full_name%></td>
+	</tr>
+	<tr>
+		<td>Profile</th>
+		<td><%= @cohortion.about%></td>
+	</tr>
+</table>
+
+<br>
+
+<%= link_to "Cohort List", cohortions_path %>
+
+	<% if @cohortadjects.any? %>
+		<h1>Adjectives Associated to <%= @cohortion.full_name%></h1>
+
+		<table id="id" border="1">
+			<div class="col-md-8">
+				<% @cohortadjects.each do |ca| %>
+					<tr>
+						<td>
+							<%= ca.adjective %>
+						</td>
+					</tr>
+				<% end %>
+	  		</div>
+  		</table>
+	<% end %>
+>>>>>>> 789fe3a756d44b9ddcf451ebd7fe555de6983e27

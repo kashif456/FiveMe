@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151125171421) do
+=======
+ActiveRecord::Schema.define(version: 20151125190508) do
+>>>>>>> 789fe3a756d44b9ddcf451ebd7fe555de6983e27
 
   create_table "adjectives", force: :cascade do |t|
     t.string   "adjective"
@@ -19,6 +23,16 @@ ActiveRecord::Schema.define(version: 20151125171421) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "cohort_adjectives", force: :cascade do |t|
+    t.string   "adjective"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "cohortion_id"
+  end
+
+>>>>>>> 789fe3a756d44b9ddcf451ebd7fe555de6983e27
   create_table "cohortions", force: :cascade do |t|
     t.string   "first"
     t.string   "last"
