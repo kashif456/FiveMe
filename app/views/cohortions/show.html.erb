@@ -1,2 +1,16 @@
-<h1><%= @cohortion.full_name %></h1>
-<p>Find me in app/views/cohortions/show.html.erb</p>
+
+
+<table id="id" border="1">
+	<tr>
+		<td>About</td>
+		<td><%= @cohortion.full_name%></td>
+	</tr>
+	<tr>
+		<td>Profile</th>
+		<td><%= @cohortion.about%></td>
+	</tr>
+</table>
+
+<br>
+
+<%= link_to "Cohort List", cohortions_path %>
