@@ -1,4 +1,6 @@
 class CohortionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :destroy]
+
   def index
     @cohortion = Cohortion.all
   end
@@ -11,6 +13,7 @@ class CohortionsController < ApplicationController
 
   def new
     @cohortion = Cohortion.new
+    #@cohortion = Cohortion.new
   end
 
   def create
