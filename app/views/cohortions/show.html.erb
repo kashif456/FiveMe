@@ -7,11 +7,11 @@
 <table id="id" border="1">
 	<tr>
 		<td>About</td>
-		<td><%= @cohortion.full_name%></td>
+		<td><%= @user.full_name%></td>
 	</tr>
 	<tr>
 		<td>Profile</th>
-		<td><%= @cohortion.about%></td>
+		<td><%= @user.about%></td>
 	</tr>
 </table>
 
@@ -20,7 +20,7 @@
 <%= link_to "Cohort List", cohortions_path %>
 
 	<% if @cohortadjects.any? %>
-		<h1>Adjectives Associated to <%= @cohortion.full_name%></h1>
+		<h1>Adjectives Associated to <%= current_user.email%></h1>
 
 		<table id="id" border="1">
 			<div class="col-md-8">

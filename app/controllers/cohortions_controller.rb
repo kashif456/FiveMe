@@ -2,44 +2,44 @@ class CohortionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, ]
 
   def index
-    @cohortion = Cohortion.all
+    @user = User.all
   end
 
   def show
-    @cohortion = Cohortion.find(params[:id])
-    #@cohort_adjectives = @Cohortion.CohortAdjective.find(params[:id])
-    @cohortadjects = @cohortion.CohortAdjective.all 
+    @user = User.find(params[:id])
+    #@cohort_adjectives = @user.CohortAdjective.find(params[:id])
+    @cohortadjects = @user.CohortAdjective.all 
   end
 
   def new
-    @cohortion = Cohortion.new
+    @user = User.new
   end
 
   def create
-    @cohortion = Cohortion.new(cohortion_params)
-    if @cohortion.save
-      redirect_to action: :show, id: @cohortion.id
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to action: :show, id: @user.id
     else
       redirect_to action: :new
     end
   end
 
   def edit
-    @cohortion = Cohortion.find(params[:id])
+    @user = User.find(params[:id])
   end
  
   def update
-     @cohortion = Cohortion.find(params[:id])
-      if @cohortion.update_attributes(cohortion_params)
-        redirect_to action: :show, id: @cohortion.id
+     @user = User.find(params[:id])
+      if @user.update_attributes(user_params)
+        redirect_to action: :show, id: @user.id
       else
-        redirect_to action: :update, id: @cohortion.id
+        redirect_to action: :update, id: @user.id
       end
   end
 
   private
-    def cohortion_params
-      params.require(:cohortion).permit(
+    def user_params
+      params.require(:user).permit(
           :first, :last, :about
         )
     end

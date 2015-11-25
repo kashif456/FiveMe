@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125190508) do
+ActiveRecord::Schema.define(version: 20151125202527) do
 
   create_table "adjectives", force: :cascade do |t|
     t.string   "adjective"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151125190508) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "cohortion_id"
+    t.integer  "user_id"
   end
 
   create_table "cohortions", force: :cascade do |t|
@@ -60,6 +61,10 @@ ActiveRecord::Schema.define(version: 20151125190508) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first"
+    t.string   "last"
+    t.string   "about"
+    t.string   "img_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
