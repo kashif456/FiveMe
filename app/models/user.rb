@@ -4,11 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :CohortAdjective, dependent: :destroy
-
-
-	def full_name
-		"#{first} #{last}"
-	end
+  #has_many :CohortAdjective, dependent: :destroy
+	#def full_name
+	#	"#{first} #{last}"
+	#end
 
 end
