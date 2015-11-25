@@ -1,8 +1,8 @@
 class CreateMtoMs < ActiveRecord::Migration
   def change
     create_table :mto_ms do |t|
-      t.integer :cohortion_id
-      t.integer :adjective_id
+      t.belongs_to :cohortion, index: true
+      t.belongs_to :adjective, index: true
 
       t.timestamps null: false
     end
