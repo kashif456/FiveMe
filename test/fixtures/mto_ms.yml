@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cohortion_id: MyString
+  adjective_id: MyString
+
+two:
+  cohortion_id: MyString
+  adjective_id: MyString
