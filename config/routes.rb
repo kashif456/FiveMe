@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
-  get 'cohortions/index'
 
-  get 'cohortions/show'
-
-  get 'cohortions/edit'
-
-  get 'cohortions/create'
-
-  get 'cohortions/update'
-
-  get 'cohortions/new'
+  root 'cohortions#index'
+  resources :cohortions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
