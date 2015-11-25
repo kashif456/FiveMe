@@ -5,6 +5,8 @@ class CohortionsController < ApplicationController
 
   def show
     @cohortion = Cohortion.find(params[:id])
+    #@cohort_adjectives = @Cohortion.CohortAdjective.find(params[:id])
+    @cohortadjects = @cohortion.CohortAdjective.all 
   end
 
   def new

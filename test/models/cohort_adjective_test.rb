@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdjectiveTest < ActiveSupport::TestCase
+class CohortAdjectiveTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

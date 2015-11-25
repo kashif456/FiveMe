@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125165125) do
+ActiveRecord::Schema.define(version: 20151125190001) do
 
   create_table "adjectives", force: :cascade do |t|
     t.string   "adjective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cohort_adjectives", force: :cascade do |t|
+    t.string   "adjective"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "cohortion_id"
   end
 
   create_table "cohortions", force: :cascade do |t|

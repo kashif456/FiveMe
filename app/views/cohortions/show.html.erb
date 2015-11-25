@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 <table id="id" border="1">
 	<tr>
@@ -15,7 +13,19 @@
 <br>
 
 <%= link_to "Cohort List", cohortions_path %>
-=======
-<h1><%= @cohortion.full_name %></h1>
-<p></p>
->>>>>>> 9e8b0689b5d4c68f0fe2a644c96a128760dc858f
+
+	<% if @cohortadjects.any? %>
+		<h1>Adjectives Associated to <%= @cohortion.full_name%></h1>
+
+		<table id="id" border="1">
+			<div class="col-md-8">
+				<% @cohortadjects.each do |ca| %>
+					<tr>
+						<td>
+							<%= ca.adjective %>
+						</td>
+					</tr>
+				<% end %>
+	  		</div>
+  		</table>
+	<% end %>
