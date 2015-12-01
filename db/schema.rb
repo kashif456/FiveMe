@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125211733) do
+ActiveRecord::Schema.define(version: 20151130221751) do
 
   create_table "adjectives", force: :cascade do |t|
     t.string   "adjective"
@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 20151125211733) do
     t.datetime "updated_at",   null: false
     t.integer  "cohortion_id"
     t.integer  "user_id"
-  end
-
-  create_table "cohortions", force: :cascade do |t|
-    t.string   "first"
-    t.string   "last"
-    t.text     "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "gits", force: :cascade do |t|
@@ -65,6 +57,8 @@ ActiveRecord::Schema.define(version: 20151125211733) do
     t.string   "last"
     t.string   "about"
     t.string   "img_url"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

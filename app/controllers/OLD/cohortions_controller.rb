@@ -13,7 +13,6 @@ class CohortionsController < ApplicationController
 
   def new
     @cohortion = Cohortion.new
-    #@cohortion = Cohortion.new
   end
 
   def create
@@ -27,11 +26,10 @@ class CohortionsController < ApplicationController
 
   def edit
     @cohortion = Cohortion.find(params[:id])
+    @cohortadjects = @cohortion.CohortAdjective.new
   end
 
-
- 
-  def update
+ def update
      @cohortion = Cohortion.find(params[:id])
       if @cohortion.update_attributes(cohortion_params)
         redirect_to action: :show, id: @cohortion.id
@@ -44,6 +42,12 @@ class CohortionsController < ApplicationController
     def cohortion_params
       params.require(:cohortion).permit(
           :first, :last, :about
+        )
+    end
+
+    def cohort_adjective_params
+      params.require(:cohortionadjective).permit(
+          :adjective 
         )
     end
 

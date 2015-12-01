@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'cohortions#index'
-  devise_for :users
-  resources :cohortions
+  root 'members#index'
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :members,	only: [:index, :show, :edit, :update]
+
+  #resources :cohortions
+
 
 end

@@ -4,6 +4,7 @@ class CreateCohortions < ActiveRecord::Migration
       t.string :first
       t.string :last
       t.text :about
+      t.integer :user_id
 
       t.timestamps null: false
     end

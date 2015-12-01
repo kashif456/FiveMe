@@ -1,0 +1,38 @@
+<h1>SI Members</h1>
+<% if user_signed_in? %>
+	<h5>Welcome <%= link_to current_user.email, edit_user_registration_path %> 
+		<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+	</h5>
+<% else %>
+	<h5><%= link_to "Login", new_user_session_path %></h5>
+<% end %>
+
+<br>
+<table id="id" border="1">
+	<th>First</th>
+	<th>Last</th>
+	<th>Email</th>
+	<% if user_signed_in? %>	
+		<th colspan="2">Action</th>
+	<%end%>
+	<% @user.each do |u| %>
+		<% if user_signed_in? %>			
+			<% if current_user.email !=  u.email %>
+			<tr>
+				<td><%= u.first_name %></td>
+				<td><%= u.last_name %></td>
+				<td><%= u.email %></td>
+				<td>
+					<%= link_to "Add Tags", edit_member_path(u)%>
+					<%end%>
+				</td>
+			</tr>
+		<%else%>
+			<tr>
+				<td><%= u.first_name %></td>
+				<td><%= u.last_name %></td>
+				<td><%= u.email %></td>
+			</tr>
+		<%end%>
+	<% end %>
+</table>

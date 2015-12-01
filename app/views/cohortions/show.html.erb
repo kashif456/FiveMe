@@ -1,4 +1,7 @@
 
+<%= link_to "<< Cohort List", cohortions_path %>
+<br><br>
+
 <table id="id" border="1">
 	<tr>
 		<td>About</td>
@@ -11,9 +14,6 @@
 </table>
 
 <br>
-
-<%= link_to "Cohort List", cohortions_path %>
-
 	<% if @cohortadjects.any? %>
 		<h1>Adjectives Associated to <%= @cohortion.full_name%></h1>
 
